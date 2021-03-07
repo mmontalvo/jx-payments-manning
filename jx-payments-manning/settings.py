@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'jx-payments-2.urls'
+ROOT_URLCONF = 'jx-payments-manning.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'jx-payments-2.wsgi.application'
+WSGI_APPLICATION = 'jx-payments-manning.wsgi.application'
 
 
 # Database
