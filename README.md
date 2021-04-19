@@ -22,9 +22,9 @@ After this, you go into `jx-payments-manning` folder and run:
 docker-compose up
 ```
 
-It will start pulling the images needed, setting up the MySQL database installation and the packages from the Django applications.
+It will start pulling the images needed and the packages from the Django application.
 
-Once the app and the database are running, we would need to run migrations to have the database tables in a work ready state.
+Once the app is running, we would need to run migrations to have the database tables in a work ready state.
 For it, we need to get into the application's Docker running instance.
 
 Running `docker ps` we can spot the instance running our application (it would be something similar to the following line):
@@ -37,7 +37,7 @@ _container_id_        jx_payments_jx-payments   "gunicorn --bind :80…"   About
 Now we need to start an interactive shell, and run the migrations with the following command:
 
 ```bash
-# Access the container where we have our database running with:
+# Access the container where we have our application running with:
 docker exec -it _container_id_ bash
 
 # Run migrations with:

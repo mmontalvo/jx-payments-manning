@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'jx-payments-manning.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'moneyfx',
-        'USER': 'root',
-	    'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
-        'HOST': os.environ.get('MONEYFX_PG_HOST', 'mysql'),
-        'PORT': 3306,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
 
