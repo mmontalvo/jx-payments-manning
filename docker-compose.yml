@@ -1,6 +1,21 @@
 version: '3'
 
 services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - '3306:3306'
+    volumes:
+      - dbdata:/var/lib/mysql
+    restart: always
+    environment:
+       MYSQL_DATABASE: 'moneyfx'
+       MYSQL_USER: 'root'
+       MYSQL_PASSWORD: 'password'
+       MYSQL_ROOT_PASSWORD: 'password'
+    networks:
+      - main
+
   jx-payments-manning:
     build:
       context: .
@@ -9,8 +24,13 @@ services:
       - .:/manning/jx-payments-manning
     ports:
       - "8080:8080"
+    depends_on:
+      - mysql
     networks:
       - main
+
+volumes:
+  dbdata:
 
 networks:
   main:
